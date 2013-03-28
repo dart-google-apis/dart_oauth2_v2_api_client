@@ -7,6 +7,9 @@ class Oauth2 extends ConsoleClient {
   UserinfoResource _userinfo;
   UserinfoResource get userinfo => _userinfo;
 
+  /** OAuth Scope2: Know your name, basic info, and list of people you're connected to on Google+ */
+  static const String PLUS_LOGIN_SCOPE = "https://www.googleapis.com/auth/plus.login";
+
   /** OAuth Scope2: Know who you are on Google */
   static const String PLUS_ME_SCOPE = "https://www.googleapis.com/auth/plus.me";
 
@@ -102,7 +105,7 @@ class Oauth2 extends ConsoleClient {
     }
 
     var response;
-    response = _client.request(url, "POST", urlParams: urlParams, queryParams: queryParams);
+    response = this.request(url, "POST", urlParams: urlParams, queryParams: queryParams);
     response
       .then((data) => completer.complete(new Tokeninfo.fromJson(data)))
       .catchError((e) { completer.completeError(e); return true; });
