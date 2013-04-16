@@ -3,31 +3,31 @@ part of oauth2_v2_api_client;
 class Tokeninfo {
 
   /** The access type granted with this token. It can be offline or online. */
-  String access_type;
+  core.String access_type;
 
   /** Who is the intended audience for this token. In general the same as issued_to. */
-  String audience;
+  core.String audience;
 
   /** The email address of the user. Present only if the email scope is present in the request. */
-  String email;
+  core.String email;
 
   /** The expiry time of the token, as number of seconds left until expiry. */
-  int expires_in;
+  core.int expires_in;
 
   /** To whom was the token issued to. In general the same as audience. */
-  String issued_to;
+  core.String issued_to;
 
   /** The space separated list of scopes granted to this token. */
-  String scope;
+  core.String scope;
 
   /** The Gaia obfuscated user id. */
-  String user_id;
+  core.String user_id;
 
   /** Boolean flag which is true if the email address is verified. Present only if the email scope is present in the request. */
-  bool verified_email;
+  core.bool verified_email;
 
   /** Create new Tokeninfo from JSON data */
-  Tokeninfo.fromJson(Map json) {
+  Tokeninfo.fromJson(core.Map json) {
     if (json.containsKey("access_type")) {
       access_type = json["access_type"];
     }
@@ -55,8 +55,8 @@ class Tokeninfo {
   }
 
   /** Create JSON Object for Tokeninfo */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (access_type != null) {
       output["access_type"] = access_type;
@@ -87,53 +87,53 @@ class Tokeninfo {
   }
 
   /** Return String representation of Tokeninfo */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 
 class Userinfo {
 
   /** The user's birthday. The year is not present. */
-  String birthday;
+  core.String birthday;
 
   /** The user's email address. */
-  String email;
+  core.String email;
 
   /** The user's last name. */
-  String family_name;
+  core.String family_name;
 
   /** The user's gender. */
-  String gender;
+  core.String gender;
 
   /** The user's first name. */
-  String given_name;
+  core.String given_name;
 
   /** The hosted domain e.g. example.com if the user is Google apps user. */
-  String hd;
+  core.String hd;
 
   /** The focus obfuscated gaia id of the user. */
-  String id;
+  core.String id;
 
   /** URL of the profile page. */
-  String link;
+  core.String link;
 
   /** The user's default locale. */
-  String locale;
+  core.String locale;
 
   /** The user's full name. */
-  String name;
+  core.String name;
 
   /** URL of the user's picture image. */
-  String picture;
+  core.String picture;
 
   /** The user's default timezone. */
-  String timezone;
+  core.String timezone;
 
   /** Boolean flag which is true if the email address is verified. */
-  bool verified_email;
+  core.bool verified_email;
 
   /** Create new Userinfo from JSON data */
-  Userinfo.fromJson(Map json) {
+  Userinfo.fromJson(core.Map json) {
     if (json.containsKey("birthday")) {
       birthday = json["birthday"];
     }
@@ -176,8 +176,8 @@ class Userinfo {
   }
 
   /** Create JSON Object for Userinfo */
-  Map toJson() {
-    var output = new Map();
+  core.Map toJson() {
+    var output = new core.Map();
 
     if (birthday != null) {
       output["birthday"] = birthday;
@@ -223,7 +223,7 @@ class Userinfo {
   }
 
   /** Return String representation of Userinfo */
-  String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.stringify(this.toJson());
 
 }
 

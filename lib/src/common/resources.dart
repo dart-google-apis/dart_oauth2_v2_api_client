@@ -13,13 +13,13 @@ class UserinfoResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Userinfo> get({Map optParams}) {
-    var completer = new Completer();
+  async.Future<Userinfo> get({core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "oauth2/v2/userinfo";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (optParams != null) {
       optParams.forEach((key, value) {
         if (value != null && queryParams[key] == null) {
@@ -61,13 +61,13 @@ class UserinfoV2MeResource extends Resource {
    *
    * [optParams] - Additional query parameters
    */
-  Future<Userinfo> get({Map optParams}) {
-    var completer = new Completer();
+  async.Future<Userinfo> get({core.Map optParams}) {
+    var completer = new async.Completer();
     var url = "userinfo/v2/me";
-    var urlParams = new Map();
-    var queryParams = new Map();
+    var urlParams = new core.Map();
+    var queryParams = new core.Map();
 
-    var paramErrors = new List();
+    var paramErrors = new core.List();
     if (optParams != null) {
       optParams.forEach((key, value) {
         if (value != null && queryParams[key] == null) {
