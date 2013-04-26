@@ -4,8 +4,8 @@ part of oauth2_v2_api_console;
 /** Lets you access OAuth2 protocol related APIs. */
 class Oauth2 extends ConsoleClient {
 
-  UserinfoResource _userinfo;
-  UserinfoResource get userinfo => _userinfo;
+  UserinfoResource_ _userinfo;
+  UserinfoResource_ get userinfo => _userinfo;
 
   /** OAuth Scope2: Know your name, basic info, and list of people you're connected to on Google+ */
   static const core.String PLUS_LOGIN_SCOPE = "https://www.googleapis.com/auth/plus.login";
@@ -71,7 +71,7 @@ class Oauth2 extends ConsoleClient {
   Oauth2([oauth2.OAuth2Console auth]) : super(auth) {
     basePath = "/";
     rootUrl = "https://www.googleapis.com:443/";
-    _userinfo = new UserinfoResource(this);
+    _userinfo = new UserinfoResource_(this);
   }
 
   /**
@@ -100,7 +100,7 @@ class Oauth2 extends ConsoleClient {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 

@@ -1,12 +1,12 @@
 part of oauth2_v2_api_client;
 
-class UserinfoResource extends Resource {
+class UserinfoResource_ extends Resource {
 
-  UserinfoV2Resource _v2;
-  UserinfoV2Resource get v2 => _v2;
+  UserinfoV2Resource_ _v2;
+  UserinfoV2Resource_ get v2 => _v2;
 
-  UserinfoResource(Client client) : super(client) {
-  _v2 = new UserinfoV2Resource(client);
+  UserinfoResource_(Client client) : super(client) {
+  _v2 = new UserinfoV2Resource_(client);
   }
 
   /**
@@ -29,7 +29,7 @@ class UserinfoResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
@@ -42,19 +42,19 @@ class UserinfoResource extends Resource {
   }
 }
 
-class UserinfoV2Resource extends Resource {
+class UserinfoV2Resource_ extends Resource {
 
-  UserinfoV2MeResource _me;
-  UserinfoV2MeResource get me => _me;
+  UserinfoV2MeResource_ _me;
+  UserinfoV2MeResource_ get me => _me;
 
-  UserinfoV2Resource(Client client) : super(client) {
-  _me = new UserinfoV2MeResource(client);
+  UserinfoV2Resource_(Client client) : super(client) {
+  _me = new UserinfoV2MeResource_(client);
   }
 }
 
-class UserinfoV2MeResource extends Resource {
+class UserinfoV2MeResource_ extends Resource {
 
-  UserinfoV2MeResource(Client client) : super(client) {
+  UserinfoV2MeResource_(Client client) : super(client) {
   }
 
   /**
@@ -77,7 +77,7 @@ class UserinfoV2MeResource extends Resource {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new ArgumentError(paramErrors.join(" / ")));
+      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
       return completer.future;
     }
 
