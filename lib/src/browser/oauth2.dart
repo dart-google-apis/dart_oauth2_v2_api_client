@@ -70,7 +70,7 @@ class Oauth2 extends BrowserClient {
 
   Oauth2([oauth.OAuth2 auth]) : super(auth) {
     basePath = "/";
-    rootUrl = "https://www.googleapis.com:443/";
+    rootUrl = "https://www.googleapis.com/";
     _userinfo = new UserinfoResource_(this);
   }
 
