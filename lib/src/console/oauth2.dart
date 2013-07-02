@@ -83,7 +83,6 @@ class Oauth2 extends ConsoleClient {
    * [optParams] - Additional query parameters
    */
   async.Future<Tokeninfo> tokeninfo({core.String access_token, core.String id_token, core.Map optParams}) {
-    var completer = new async.Completer();
     var url = "oauth2/v2/tokeninfo";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -100,15 +99,12 @@ class Oauth2 extends ConsoleClient {
     }
 
     if (!paramErrors.isEmpty) {
-      completer.completeError(new core.ArgumentError(paramErrors.join(" / ")));
-      return completer.future;
+      throw new core.ArgumentError(paramErrors.join(" / "));
     }
 
     var response;
     response = this.request(url, "POST", urlParams: urlParams, queryParams: queryParams);
-    response
-      .then((data) => completer.complete(new Tokeninfo.fromJson(data)))
-      .catchError((e) { completer.completeError(e); return true; });
-    return completer.future;
+    return response
+      .then((data) => new Tokeninfo.fromJson(data));
   }
 }
