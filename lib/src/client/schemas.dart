@@ -1,4 +1,4 @@
-part of oauth2_v2_api_client;
+part of oauth2_v2_api;
 
 class Tokeninfo {
 
@@ -227,3 +227,16 @@ class Userinfo {
 
 }
 
+core.Map _mapMap(core.Map source, [core.Object convert(core.Object source) = null]) {
+  assert(source != null);
+  var result = new dart_collection.LinkedHashMap();
+  source.forEach((core.String key, value) {
+    assert(key != null);
+    if(convert == null) {
+      result[key] = value;
+    } else {
+      result[key] = convert(value);
+    }
+  });
+  return result;
+}

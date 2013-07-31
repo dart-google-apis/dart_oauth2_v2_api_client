@@ -1,13 +1,14 @@
-part of oauth2_v2_api_client;
+part of oauth2_v2_api;
 
-class UserinfoResource_ extends Resource {
+class UserinfoResource_ {
 
-  UserinfoV2Resource_ _v2;
-  UserinfoV2Resource_ get v2 => _v2;
+  final Client _client;
 
-  UserinfoResource_(Client client) : super(client) {
-  _v2 = new UserinfoV2Resource_(client);
-  }
+  final UserinfoV2Resource_ v2;
+
+  UserinfoResource_(Client client) :
+      _client = client,
+      v2 = new UserinfoV2Resource_(client);
 
   /**
    *
@@ -38,20 +39,23 @@ class UserinfoResource_ extends Resource {
   }
 }
 
-class UserinfoV2Resource_ extends Resource {
+class UserinfoV2Resource_ {
 
-  UserinfoV2MeResource_ _me;
-  UserinfoV2MeResource_ get me => _me;
+  final Client _client;
 
-  UserinfoV2Resource_(Client client) : super(client) {
-  _me = new UserinfoV2MeResource_(client);
-  }
+  final UserinfoV2MeResource_ me;
+
+  UserinfoV2Resource_(Client client) :
+      _client = client,
+      me = new UserinfoV2MeResource_(client);
 }
 
-class UserinfoV2MeResource_ extends Resource {
+class UserinfoV2MeResource_ {
 
-  UserinfoV2MeResource_(Client client) : super(client) {
-  }
+  final Client _client;
+
+  UserinfoV2MeResource_(Client client) :
+      _client = client;
 
   /**
    *
