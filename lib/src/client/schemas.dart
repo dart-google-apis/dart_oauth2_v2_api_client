@@ -87,14 +87,11 @@ class Tokeninfo {
   }
 
   /** Return String representation of Tokeninfo */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 
 class Userinfo {
-
-  /** The user's birthday. The year is not present. */
-  core.String birthday;
 
   /** The user's email address. */
   core.String email;
@@ -134,9 +131,6 @@ class Userinfo {
 
   /** Create new Userinfo from JSON data */
   Userinfo.fromJson(core.Map json) {
-    if (json.containsKey("birthday")) {
-      birthday = json["birthday"];
-    }
     if (json.containsKey("email")) {
       email = json["email"];
     }
@@ -179,9 +173,6 @@ class Userinfo {
   core.Map toJson() {
     var output = new core.Map();
 
-    if (birthday != null) {
-      output["birthday"] = birthday;
-    }
     if (email != null) {
       output["email"] = email;
     }
@@ -223,7 +214,7 @@ class Userinfo {
   }
 
   /** Return String representation of Userinfo */
-  core.String toString() => JSON.stringify(this.toJson());
+  core.String toString() => JSON.encode(this.toJson());
 
 }
 

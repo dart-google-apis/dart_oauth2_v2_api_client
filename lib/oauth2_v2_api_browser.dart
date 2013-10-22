@@ -2,13 +2,13 @@ library oauth2_v2_api.browser;
 
 import "package:google_oauth2_client/google_oauth2_browser.dart" as oauth;
 
-import 'package:google_oauth2_v2_api/src/cloud_api_browser.dart';
+import 'package:google_oauth2_v2_api/src/browser_client.dart';
 import "package:google_oauth2_v2_api/oauth2_v2_api_client.dart";
 
 /** Lets you access OAuth2 protocol related APIs. */
 class Oauth2 extends Client with BrowserClient {
 
-  /** OAuth Scope2: Know your name, basic info, and list of people you're connected to on Google+ */
+  /** OAuth Scope2: Know your basic profile info and list of people in your circles. */
   static const String PLUS_LOGIN_SCOPE = "https://www.googleapis.com/auth/plus.login";
 
   /** OAuth Scope2: Know who you are on Google */
