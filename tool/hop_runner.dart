@@ -3,7 +3,7 @@ library hop_runner;
 import 'package:hop/hop.dart';
 import 'package:hop/hop_tasks.dart';
 
-void main() {
+void main(List<String> args) {
 
   List pathList = [
     'lib/oauth2_v2_api_browser.dart',
@@ -15,5 +15,5 @@ void main() {
 
   addTask('analyze', createAnalyzerTask(pathList));
 
-  runHop();
+  runHop(args);
 }
