@@ -91,7 +91,7 @@ class Tokeninfo {
 
 }
 
-class Userinfo {
+class Userinfoplus {
 
   /** The user's email address. */
   core.String email;
@@ -114,7 +114,7 @@ class Userinfo {
   /** URL of the profile page. */
   core.String link;
 
-  /** The user's default locale. */
+  /** The user's preferred locale. */
   core.String locale;
 
   /** The user's full name. */
@@ -123,14 +123,11 @@ class Userinfo {
   /** URL of the user's picture image. */
   core.String picture;
 
-  /** The user's default timezone. */
-  core.String timezone;
-
-  /** Boolean flag which is true if the email address is verified. */
+  /** Boolean flag which is true if the email address is verified. Always verified because we only return the user's primary email address. */
   core.bool verified_email;
 
-  /** Create new Userinfo from JSON data */
-  Userinfo.fromJson(core.Map json) {
+  /** Create new Userinfoplus from JSON data */
+  Userinfoplus.fromJson(core.Map json) {
     if (json.containsKey("email")) {
       email = json["email"];
     }
@@ -161,15 +158,12 @@ class Userinfo {
     if (json.containsKey("picture")) {
       picture = json["picture"];
     }
-    if (json.containsKey("timezone")) {
-      timezone = json["timezone"];
-    }
     if (json.containsKey("verified_email")) {
       verified_email = json["verified_email"];
     }
   }
 
-  /** Create JSON Object for Userinfo */
+  /** Create JSON Object for Userinfoplus */
   core.Map toJson() {
     var output = new core.Map();
 
@@ -203,9 +197,6 @@ class Userinfo {
     if (picture != null) {
       output["picture"] = picture;
     }
-    if (timezone != null) {
-      output["timezone"] = timezone;
-    }
     if (verified_email != null) {
       output["verified_email"] = verified_email;
     }
@@ -213,7 +204,7 @@ class Userinfo {
     return output;
   }
 
-  /** Return String representation of Userinfo */
+  /** Return String representation of Userinfoplus */
   core.String toString() => JSON.encode(this.toJson());
 
 }

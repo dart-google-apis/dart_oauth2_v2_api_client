@@ -14,7 +14,7 @@ class UserinfoResource_ {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Userinfo> get({core.Map optParams}) {
+  async.Future<Userinfoplus> get({core.Map optParams}) {
     var url = "oauth2/v2/userinfo";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -35,7 +35,7 @@ class UserinfoResource_ {
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
     return response
-      .then((data) => new Userinfo.fromJson(data));
+      .then((data) => new Userinfoplus.fromJson(data));
   }
 }
 
@@ -61,7 +61,7 @@ class UserinfoV2MeResource_ {
    *
    * [optParams] - Additional query parameters
    */
-  async.Future<Userinfo> get({core.Map optParams}) {
+  async.Future<Userinfoplus> get({core.Map optParams}) {
     var url = "userinfo/v2/me";
     var urlParams = new core.Map();
     var queryParams = new core.Map();
@@ -82,7 +82,7 @@ class UserinfoV2MeResource_ {
     var response;
     response = _client.request(url, "GET", urlParams: urlParams, queryParams: queryParams);
     return response
-      .then((data) => new Userinfo.fromJson(data));
+      .then((data) => new Userinfoplus.fromJson(data));
   }
 }
 
